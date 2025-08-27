@@ -21,6 +21,7 @@ namespace PasswordStrengthLib
             if (criteriaMet == 1) return "WEAK";
             if (criteriaMet == 2 || criteriaMet == 3) return "MEDIUM";
             if (criteriaMet == 4) return "STRONG";
+            if (password.Length < 8) return "INELGIBLE";
 
             return "INELIGIBLE";
         }
