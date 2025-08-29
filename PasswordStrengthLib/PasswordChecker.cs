@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace PasswordStrengthLib
 {
@@ -7,7 +6,8 @@ namespace PasswordStrengthLib
     {
         public static string CheckStrength(string password)
         {
-            if (string.IsNullOrEmpty(password))
+            // ⬇️ Add this guard FIRST
+            if (string.IsNullOrEmpty(password) || password.Length < 8)
                 return "INELIGIBLE";
 
             int criteriaMet = 0;
